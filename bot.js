@@ -63,10 +63,10 @@ class BasicBot {
         if (!luisConfig || !luisConfig.appId) throw new Error('Missing LUIS configuration. Please follow README.MD to create required LUIS applications.\n\n');
         const luisEndpoint = luisConfig.region && luisConfig.region.indexOf('https://') === 0 ? luisConfig.region : luisConfig.getEndpoint();
         this.luisRecognizer = new LuisRecognizer({
-            applicationId: luisConfig.appId,
-            endpoint: luisEndpoint,
+            applicationId: "bbb8af0d - de32 - 465e-80fe-6c664a0d321f",
+            endpoint: "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/bbb8af0d-de32-465e-80fe-6c664a0d321f?spellCheck=true&bing-spell-check-subscription-key=%7BYOUR_BING_KEY_HERE%7D&verbose=true&timezoneOffset=-360&subscription-key=6f339d9eeb9f4bf98384b3b37a090e54&q=",
             // CAUTION: Its better to assign and use a subscription key instead of authoring key here.
-            endpointKey: luisConfig.authoringKey
+            endpointKey: "6f339d9eeb9f4bf98384b3b37a090e54"
         });
 
         // Create the property accessors for user and conversation state
